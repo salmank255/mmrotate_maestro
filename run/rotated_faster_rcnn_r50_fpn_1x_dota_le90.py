@@ -1,5 +1,5 @@
-dataset_type = 'build_dataset'
-data_root = '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/'
+dataset_type = 'DOTADataset'
+data_root = '/data/split_dota/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -42,11 +42,9 @@ data = dict(
     samples_per_gpu=2,
     workers_per_gpu=2,
     train=dict(
-        type='build_dataset',
-        ann_file=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/annfiles/',
-        img_prefix=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/images/',
+        type='DOTADataset',
+        ann_file='/data/split_dota/train/annfiles/',
+        img_prefix='/data/split_dota/train/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -67,11 +65,9 @@ data = dict(
         ],
         version='le90'),
     val=dict(
-        type='build_dataset',
-        ann_file=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/annfiles/',
-        img_prefix=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/images/',
+        type='DOTADataset',
+        ann_file='/data/split_dota/train/annfiles/',
+        img_prefix='/data/split_dota/train/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(
@@ -92,11 +88,9 @@ data = dict(
         ],
         version='le90'),
     test=dict(
-        type='build_dataset',
-        ann_file=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/images/',
-        img_prefix=
-        '/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/data/split_dota/train/images/',
+        type='DOTADataset',
+        ann_file='/data/split_dota/train/images/',
+        img_prefix='/data/split_dota/train/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(
