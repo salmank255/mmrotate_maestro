@@ -23,8 +23,8 @@ from mmrotate.utils import collect_env, get_root_logger, setup_multi_processes
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
-    parser.add_argument('config', help='train config file path')
-    parser.add_argument('--work-dir', help='the dir to save logs and models')
+    parser.add_argument('config', default='/mnt/mars-beta/tochukwu/maestro/maestro_code/mmrotate/configs/rotated_faster_rcnn/rotated_faster_rcnn_r50_fpn_1x_dota_le90.py', help='train config file path')
+    parser.add_argument('--work-dir', default = 'run',help='the dir to save logs and models')
     parser.add_argument(
         '--resume-from', help='the checkpoint file to resume from')
     parser.add_argument(
